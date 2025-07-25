@@ -258,7 +258,7 @@
         
         .btn-primary {
             background: var(--primary-color);
-            color: white;
+            color: white !important;
             box-shadow: 0 2px 8px rgba(31,41,55,0.15);
         }
         
@@ -266,6 +266,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(31,41,55,0.2);
             background: var(--text-dark);
+            color: white !important;
         }
         
         .btn-secondary {
@@ -281,11 +282,12 @@
         
         .btn-white {
             background: white;
-            color: var(--primary-color);
+            color: var(--primary-color) !important;
         }
         
         .btn-white:hover {
             background: #f8f9fa;
+            color: var(--primary-color) !important;
         }
         
         /* ========== ХЕДЕР С ПОЛНОЙ АДАПТИВНОСТЬЮ ========== */
@@ -314,6 +316,7 @@
             align-items: center;
             gap: clamp(8px, 2vw, 15px);
             flex-shrink: 0;
+            color: white;
         }
         
         /* Навигационные ссылки */
@@ -341,17 +344,21 @@
         }
         
         .nav-cta {
-            background: var(--secondary-color);
+            background: white;
+            color: var(--text-dark) !important;
+            border: 2px solid #d1d5db;
             padding: clamp(8px, 2vw, 12px) clamp(15px, 3vw, 25px);
             border-radius: clamp(15px, 3vw, 25px);
             font-weight: 600;
-            transition: transform 0.3s;
+            transition: all 0.3s;
             font-size: clamp(0.8rem, 2vw, 0.95rem);
         }
         
         .nav-cta:hover {
             transform: translateY(-2px);
-            background: var(--text-dark);
+            background: #f8f9fa;
+            border-color: #9ca3af;
+            color: var(--text-dark) !important;
             opacity: 1;
         }
         
@@ -440,6 +447,17 @@
             letter-spacing: -0.03em;
             display: inline-block;
             margin: 0 0.1em;
+        }
+        
+        .hero-text h1 .seo-icon {
+            display: inline-block;
+            animation: subtleGlow 3s ease-in-out infinite;
+            margin-right: 0.2em;
+        }
+        
+        @keyframes subtleGlow {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
         }
         
         .hero-subtitle {
@@ -675,29 +693,53 @@
             color: white;
         }
         
+        .problem-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: clamp(2rem, 5vw, 3rem);
+            margin-top: clamp(2rem, 5vw, 3rem);
+        }
+        
         .problem-card {
             border-left: 4px solid var(--accent-color);
-            text-align: left;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: clamp(2rem, 5vw, 3rem);
         }
         
         .problem-header {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: clamp(15px, 4vw, 25px);
-            margin-bottom: clamp(1rem, 3vw, 1.5rem);
+            gap: clamp(1rem, 3vw, 1.5rem);
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
+            text-align: center;
         }
         
         .problem-icon {
             background: #f3f4f6;
             color: var(--text-color);
             margin: 0;
+            width: clamp(60px, 15vw, 80px);
+            height: clamp(60px, 15vw, 80px);
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
         }
         
         .problem-title {
             color: var(--text-dark);
             font-weight: 600;
-            flex: 1;
             margin: 0;
+            text-align: center;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+        }
+        
+        .problem-card p {
+            text-align: center;
+            line-height: 1.6;
+            color: var(--text-color);
         }
         
         .education-card {
@@ -813,6 +855,26 @@
         
         .pricing-cta {
             text-align: center;
+            margin-top: auto;
+        }
+        
+        .pricing-cta .btn {
+            color: white !important;
+            background: var(--primary-color) !important;
+        }
+        
+        .pricing-cta .btn:hover {
+            color: white !important;
+            background: var(--text-dark) !important;
+        }
+        
+        .hero-cta .btn-primary span {
+            color: white !important;
+        }
+        
+        /* Белый текст для кнопки консультации */
+        .btn-primary span {
+            color: white !important;
         }
         
         /* ========== EDUCATION GRID ========== */
@@ -880,17 +942,18 @@
         }
         
         .footer-section a {
-            color: #d1d5db;
+            color: #000000 !important;
             text-decoration: none;
             display: block;
             margin-bottom: clamp(0.3rem, 1vw, 0.6rem);
             transition: color 0.3s ease;
             font-size: clamp(0.85rem, 2vw, 1rem);
             padding: clamp(4px, 1vw, 8px) 0;
+            font-weight: 600;
         }
         
         .footer-section a:hover {
-            color: var(--text-light);
+            color: #333333 !important;
         }
         
         .footer-bottom {
@@ -1159,7 +1222,7 @@
         <nav class="container">
             <div class="logo">
                 <span>🚀</span>
-                <span>SEOFree</span>
+                <span style="color: white !important;">SEOFree</span>
             </div>
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
             <div class="nav-links" id="navLinks">
@@ -1177,7 +1240,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>SEO продвижение для малого бизнеса <span class="price-highlight">от 8000₽</span> без предоплаты</h1>
+                    <h1><span class="seo-icon">🎯</span>SEO продвижение для малого бизнеса <span class="price-highlight">от 8000₽</span> без предоплаты</h1>
                     <p class="hero-subtitle">
                         Честное SEO услуги + обучение для ИП и малых компаний в России, Беларуси, Казахстане. 
                         <span class="highlight">Гарантия ТОП-10 в поиске</span> 🎯
@@ -1334,7 +1397,7 @@
                 </p>
                 <a href="#prices" class="btn btn-primary">
                     <span>💬</span>
-                    <span>Заказать SEO консультацию бесплатно</span>
+                    <span style="color: white !important;">Заказать SEO консультацию бесплатно</span>
                 </a>
             </div>
         </div>
@@ -1348,7 +1411,7 @@
                 <p>90% малого бизнеса сталкивается с этим при заказе SEO услуг и SEO продвижения сайта</p>
             </div>
             
-            <div class="problem-cards" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap-size);">
+            <div class="problem-cards">
                 <div class="problem-card">
                     <div class="problem-header">
                         <div class="problem-icon">💸</div>
@@ -1604,9 +1667,9 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem; padding: var(--card-padding); background: linear-gradient(135deg, var(--text-color), var(--secondary-color); color: white; border-radius: 15px;">
-                <h3 style="margin-bottom: 1rem;">🎯 Результат SEO обучения</h3>
-                <p style="margin-bottom: 1.5rem;">
+            <div style="text-align: center; margin-top: 3rem; padding: var(--card-padding); background: linear-gradient(135deg, var(--text-color), var(--secondary-color)); color: white; border-radius: 15px;">
+                <h3 style="margin-bottom: 1rem; color: white !important;">🎯 Результат SEO обучения</h3>
+                <p style="margin-bottom: 1.5rem; color: white !important;">
                     Ваша команда сможет самостоятельно делать SEO продвижение сайта, экономя 50-80% бюджета на SEO услуги
                 </p>
                 <a href="#contact" class="btn btn-white">
@@ -1620,8 +1683,8 @@
     <!-- CTA Section -->
     <section id="contact" class="cta">
         <div class="container">
-            <h2>Готовы увеличить продажи через SEO продвижение?</h2>
-            <p>Получите бесплатную SEO консультацию и план SEO продвижения для вашего бизнеса</p>
+            <h2 style="color: white !important; font-weight: 700;">Готовы увеличить продажи через SEO продвижение?</h2>
+            <p style="color: white !important; font-weight: 400; opacity: 1;">Получите бесплатную SEO консультацию и план SEO продвижения для вашего бизнеса</p>
             
             <div class="cta-buttons">
                 <a href="tel:+79179317847" class="btn btn-white">
@@ -1640,20 +1703,20 @@
             
             <div class="contact-info">
                 <div>
-                    <h4>🇷🇺 SEO продвижение в России</h4>
-                    <p>Работаем с учетом специфики Яндекс для SEO</p>
+                    <h4 style="color: white !important;">🇷🇺 SEO продвижение в России</h4>
+                    <p style="color: white !important;">Работаем с учетом специфики Яндекс для SEO</p>
                 </div>
                 <div>
-                    <h4>🇧🇾 SEO услуги в Беларуси</h4>
-                    <p>SEO оптимизация под Google и Яндекс</p>
+                    <h4 style="color: white !important;">🇧🇾 SEO услуги в Беларуси</h4>
+                    <p style="color: white !important;">SEO оптимизация под Google и Яндекс</p>
                 </div>
                 <div>
-                    <h4>🇰🇿 SEO продвижение в Казахстане</h4>
-                    <p>Локальное SEO + мультиязычность</p>
+                    <h4 style="color: white !important;">🇰🇿 SEO продвижение в Казахстане</h4>
+                    <p style="color: white !important;">Локальное SEO + мультиязычность</p>
                 </div>
             </div>
             
-            <p style="margin-top: 2rem; opacity: 0.8;">
+            <p style="margin-top: 2rem; color: white !important; font-weight: 400;">
                 Работаем ежедневно с 9:00 до 21:00 (GMT+3) • SEO консультация бесплатно • Отвечаем за 15 минут
             </p>
         </div>
