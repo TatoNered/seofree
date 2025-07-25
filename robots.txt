@@ -1,0 +1,4 @@
+# Сгенерировано https://pr-cy.ru/
+
+User-agent: *
+Allow: https://seofree.net/
